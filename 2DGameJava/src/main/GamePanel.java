@@ -27,15 +27,16 @@ public class GamePanel extends JPanel implements Runnable{
     // WORLD SETTINGS
     public final int maxWorldCol = 50;
     public final int maxWorldRow = 50;
-    public final int worldWidth = tileSize + maxWorldCol;
-    public final int worldHeight = tileSize + maxWorldRow;
 
     // FPS
     final int FPS = 60;
 
+    // SYSTEM
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     public CollisionChecker cChecker = new CollisionChecker(this);
+    public AssetSetter aSetter = new AssetSetter(this);
+    Sound sound = new Sound();
 
     /**
      * A thread is a thread of execution in a program. 
@@ -45,7 +46,7 @@ public class GamePanel extends JPanel implements Runnable{
      */
     Thread gameThread;
 
-    public AssetSetter aSetter = new AssetSetter(this);
+    // ENTITY AND OBJECT
     public Player player = new Player(this, keyH);
     public SuperObject obj[] = new SuperObject[10]; // we can display ten objects at the same time
 
@@ -61,6 +62,8 @@ public class GamePanel extends JPanel implements Runnable{
     public void setupGame() {
 
         aSetter.setObject();
+
+        playMusic(0);
     }
 
     public void startGameThread() {
@@ -138,6 +141,20 @@ public class GamePanel extends JPanel implements Runnable{
         
         g2.dispose(); // dispose of this graphics context and release any system resources that it is using (good practice to save some memory)
     }
+    
+    public void playMusic(int i) {
 
+        sound.setFile(i);
+        sound.play();
+        sound.loop();
+    }
+    public void stopMusic() {
 
+        sound.stop();
+    }
+    public void playSE(int i) {
+
+        sound.setFile(i);
+        sound.play();
+    }
 }
