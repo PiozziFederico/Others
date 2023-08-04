@@ -36,7 +36,8 @@ public class GamePanel extends JPanel implements Runnable{
     KeyHandler keyH = new KeyHandler();
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssetSetter aSetter = new AssetSetter(this);
-    Sound sound = new Sound();
+    Sound music = new Sound();
+    Sound se = new Sound();
 
     /**
      * A thread is a thread of execution in a program. 
@@ -144,17 +145,17 @@ public class GamePanel extends JPanel implements Runnable{
     
     public void playMusic(int i) {
 
-        sound.setFile(i);
-        sound.play();
-        sound.loop();
+        music.setFile(i);
+        music.play();
+        music.loop();
     }
     public void stopMusic() {
 
-        sound.stop();
+        music.stop();
     }
     public void playSE(int i) {
 
-        sound.setFile(i);
-        sound.play();
+        se.setFile(i);
+        se.play();
     }
 }
