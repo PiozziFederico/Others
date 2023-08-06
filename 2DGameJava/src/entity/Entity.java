@@ -28,6 +28,10 @@ public class Entity {
     public boolean collisionOn = false;
     public int actionLockCounter = 0;
 
+    // CHARACTER STATUS
+    public int maxLife;
+    public int life;
+
     String dialogues[] = new String[20];
     int dialogueIndex = 0;
 
@@ -37,7 +41,7 @@ public class Entity {
 
     public void setAction() {}
     public void speak() {
-        
+
         if(dialogues[dialogueIndex] == null) {
             dialogueIndex = 0;
         }
