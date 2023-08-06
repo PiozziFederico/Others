@@ -14,7 +14,7 @@ public class Main {
  
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setTitle("2DAdventure");
+        window.setTitle("2DGameAdventure");
 
         GamePanel gamePanel = new GamePanel();
         window.add(gamePanel);
