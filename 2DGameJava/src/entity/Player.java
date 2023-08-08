@@ -2,14 +2,11 @@ package entity;
 
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
 import main.GamePanel;
 import main.KeyHandler;
-import main.UtilityTool;
 
 public class Player extends Entity {
 
